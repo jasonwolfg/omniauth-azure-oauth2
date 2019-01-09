@@ -1,4 +1,5 @@
 # OmniAuth Windows Azure Active Directory Strategy
+[![Build Status](https://travis-ci.org/KonaTeam/omniauth-azure-oauth2.svg?branch=master)](https://travis-ci.org/KonaTeam/omniauth-azure-oauth2)
 
 This gem provides a simple way to authenticate to Windows Azure Active Directory (WAAD) over OAuth2 using OmniAuth.
 
@@ -100,6 +101,9 @@ use OmniAuth::Builder do
 end
 ```
 
+The base_azure_url can be overridden in the provider configuration for different locales; e.g. `base_azure_url: "https://login.microsoftonline.de"`
+
+
 ## Auth Hash Schema
 
 The following information is provided back to you for this provider:
@@ -140,7 +144,8 @@ end
 5. Push to the branch (`git push origin my-new-feature`)
 6. Create new Pull Request
 
+
 ## Misc
 Run tests `bundle exec rake`  
-Push to rubygems `bundle exec rake release`. 
-# omniauth-azure-oauth2
+Push to rubygems `bundle exec rake release`.
+ 
