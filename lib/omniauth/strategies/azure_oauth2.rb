@@ -13,8 +13,6 @@ module OmniAuth
       # AD resource identifier
       option :resource, '00000002-0000-0000-c000-000000000000'
 
-      option :resource_type, 'token'
-
       # tenant_provider must return client_id, client_secret and optionally tenant_id and base_azure_url
       args [:tenant_provider]
 
@@ -27,7 +25,6 @@ module OmniAuth
 
         options.client_id = provider.client_id
         options.client_secret = provider.client_secret
-        options.response_type = provider.response_type
         options.tenant_id =
           provider.respond_to?(:tenant_id) ? provider.tenant_id : 'common'
         options.base_azure_url =
