@@ -1,5 +1,5 @@
 module OmniAuth
   module AzureOauth2
-    VERSION = "0.0.10.5"
+    VERSION = "0.0.10.6"
   end
 end
