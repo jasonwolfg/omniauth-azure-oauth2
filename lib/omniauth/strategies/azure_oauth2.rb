@@ -11,7 +11,7 @@ module OmniAuth
       option :tenant_provider, nil
 
       # AD resource identifier
-      option :resource, '00000002-0000-0000-c000-000000000000'
+      #option :resource, '00000002-0000-0000-c000-000000000000'
 
       # tenant_provider must return client_id, client_secret and optionally tenant_id and base_azure_url
       args [:tenant_provider]
@@ -29,6 +29,8 @@ module OmniAuth
           provider.respond_to?(:tenant_id) ? provider.tenant_id : 'common'
         options.base_azure_url =
           provider.respond_to?(:base_azure_url) ? provider.base_azure_url : BASE_AZURE_URL
+        options.resource =
+          provider.respond_to?(:resource) ? provider.resource : '00000002-0000-0000-c000-000000000000'
 
         options.authorize_params = provider.authorize_params if provider.respond_to?(:authorize_params)
         options.authorize_params.domain_hint = provider.domain_hint if provider.respond_to?(:domain_hint) && provider.domain_hint
